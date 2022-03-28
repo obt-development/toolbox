@@ -1,0 +1,7 @@
+accounts/__pycache__/
+config/__pycache__/
+note/__pycache__/
+contact/__pycache__/
+pages/__pycache__/
+.venv/
+.vscode/
