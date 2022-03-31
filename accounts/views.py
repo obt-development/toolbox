@@ -35,7 +35,7 @@ def modifprofil(request, id):
     return render(request, 'accounts/modifprofil.html', {"form":form})
 
 
-def profil(request):
+def profile(request):
     if request.method == 'Request':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
@@ -45,7 +45,7 @@ def profil(request):
     context = {
         'form' : form,
     }
-    return render(request, 'accounts/profil.html', context)
+    return render(request, 'accounts/profile.html', context)
 
 
 

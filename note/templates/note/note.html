@@ -10,8 +10,8 @@
          {% for note in object_list %}
             <div class= "col">
                 <div class="card mb-3 shadow">
-                    <div class="card-body">
-                        <h3 class="card-title">{{note.title| safe }} -  <font size="3"> Le : {{note.creation_date | date:'d F Y'}}</font> </h3>
+                    <div class="card-body" style="max-height: 18rem;min-height: 18rem;">
+                        <h3 class="card-title" >{{note.title| safe }}   <font size="3"> <br>Le : {{note.updated_date | date:'d F Y'}}</font> <hr></h3>
                         <p class="card-text">{{ note.content| safe | truncatechars:'200'}}</p>
                         <a href="{% url 'detail_note' note.id %}" class="card-link">Ouvrir</a>
                         <a href="{% url 'delete_note' note.pk %}" class="card-link">Supprimer</a>
@@ -33,7 +33,7 @@
 
           }
         </style>
-        Page {{page_obj.number}} de {{page_obj.paginator.num_pages}}
+        <!-- Page {{page_obj.number}} de {{page_obj.paginator.num_pages}} -->
         </div>
         <br>
         <ul style="ml: 10 px" class="pagination">

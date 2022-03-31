@@ -3,7 +3,10 @@
 {% block content %}
 
 <hr>
-<h1><center>{{note.title | upper}}   <h3>Créée le : {{note.creation_date | date:'d F Y'}}</h3></center></h1>
+<h1><center>{{note.title | upper}}   <h3>Créée le : {{ note.updated_date| date:'d F Y' }} 
+                                                    
+                                                 
+                                                    </h3></center></h1>
 <hr>
 <div class="container">
     <div class="card mb-3 shadow">

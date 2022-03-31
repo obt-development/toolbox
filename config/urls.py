@@ -7,6 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('skeditor/', include('ckeditor_uploader.urls')),
     path('', include('pages.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('note/', include('note.urls')),
+    path('pwd/', include('pwd.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

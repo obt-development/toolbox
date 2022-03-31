@@ -9,9 +9,9 @@ from.forms import NoteForm
 class ViewNote(ListView):
     model = Note
     template_name = 'note/note.html'
-    paginate_by = 6
     
-    # # ordering = ['-id']
+    paginate_by = 6
+    ordering = ['id']
 
 class AddNoteView(CreateView):
     model = Note

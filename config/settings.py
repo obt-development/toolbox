@@ -34,7 +34,9 @@ CKEDITOR_UPLOAD_PATH = 'uploader/'
 
 # Application definition
 
-INSTALLED_APPS = [
+
+DJANGO_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,12 +45,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'ckeditor',
+ ]   
+
+LOCAL_APPS = [
     
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'note.apps.NoteConfig',
-    
+    'pwd.apps.PwdConfig',
 ]
+    
+
+INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,5 +155,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'pages:home'
+# LOGIN_REDIRECT_URL = 'pages:home'
 LOGOUT_REDIRECT_URL = 'pages:home'

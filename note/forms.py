@@ -9,4 +9,5 @@ class NoteForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'note_date': forms.DateTimeInput(attrs={'class': 'form-control'}),
         }
