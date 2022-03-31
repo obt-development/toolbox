@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}NotePad | Login{% endblock title %}
+{% block content %}
+
+ <style>
+    table {
+      margin: 1em;
+      width: 100%;
+      border: 3px solid bleue;
+      padding: 10px;
+    }
+
+    input{
+        margin: 1em;
+    }
+
+</style>
+
+
+<div class= "form-group">
+        <table>
+            <form  method='post'>    
+                {% csrf_token %}
+                    {{ form.as_table}}
+            </table>
+            <input type="submit" class="btn btn-outline-info mb-2" value='Login'</input>
+</div>
+{% comment %} </header> {% endcomment %}
+
+{% endblock content %}

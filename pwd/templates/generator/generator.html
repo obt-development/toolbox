@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}NotePad | Note{% endblock title %}
+{% block content %}
+
+<hr>
+<h1><center>MES MOTS DE PASSE</center></h1>
+<hr>
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+<hr>
+        <button class="btn btn-primary btn-sm" name="save" id="save" value="save"> Enregistrer</button>
+        <button class="btn btn-primary btn-sm" name="cancel" id="cancel" value="cancel"> Annuler</button>
+        <button class="btn btn-primary btn-sm" name="generate" id="generate" value="generate" href="{% pwd.GeneratorView.generate %}"> Générer le mot de passe</button>
+
+<hr>
+{{ generate.form }}
+<!-- {{ request.POST}} -->
+
+{% endblock content%}
