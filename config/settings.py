@@ -9,7 +9,12 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 from pathlib import Path
+from decouple import config
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,15 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-85d0t@#i8+j5ad85-tq4twhu-(*v8l9af$j4tmqu_g40o_rwrz'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backend.console.EmailBackend'
+
+    
 
 
 CKEDITOR_UPLOAD_PATH = 'uploader/'
@@ -157,3 +162,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # LOGIN_REDIRECT_URL = 'pages:home'
 LOGOUT_REDIRECT_URL = 'pages:home'
+
+EMAIL_BACKEND  =  "django.core.mail.backends.filebased.EmailBackend" 
+EMAIL_FILE_PATH  =  BASE_DIR  /  "sent_emails"
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'boutet.13010@gmail.com'
+EMAil_HOST_PASSWORD = config('pwdmail')
+EMAIL_PORT = 25
+EMAIL_USER_TLS = True
+EMAIL_USE_SSL = False

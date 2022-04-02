@@ -9,6 +9,7 @@ phonenumbers = "*"
 django-phonenumber-field = "*"
 django-ckeditor = "*"
 pillow = "*"
+python-decouple = "*"
 
 [dev-packages]
 

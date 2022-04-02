@@ -23,7 +23,9 @@
                 {% csrf_token %}
                     {{ form.as_table}}
             </table>
-            <input type="submit" class="btn btn-outline-info mb-2" value='Login'</input>
+            <input type="submit" class="btn btn-outline-info mb-2" value='Login'></input>
+            <p>Vous avez oublié votre mot de passe, pas dr soucis ...</p>
+            <p>Cela ce passe <a href="{% url 'password_reset' %}">ici</a></p>
 </div>
 {% comment %} </header> {% endcomment %}
 
