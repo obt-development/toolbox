@@ -10,7 +10,11 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
+ table.table {
+  color: #fff;
+  border-color: #5f6163;
+ 
+ }
  .center 
  {
   display: block;

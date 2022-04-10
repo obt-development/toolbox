@@ -1,21 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}NotePad | Note{% endblock title %}
 {% block content %}
-
 <hr>
-<h1><center>MES MOTS DE PASSE</center></h1>
+<center><h1> GENERATION DE MOTS DE PASSE </h1></center>
 <hr>
+<br>
 <div class="container">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p}}
-<hr>
-        <button class="btn btn-primary btn-sm" name="save" id="save" value="save"> Enregistrer</button>
-        <button class="btn btn-primary btn-sm" name="cancel" id="cancel" value="cancel"> Annuler</button>
-        <button class="btn btn-primary btn-sm" name="generate" id="generate" value="generate" href="{% pwd.GeneratorView.generate %}"> Générer le mot de passe</button>
+        <div class= "form-group">
+                <table method="POST" class="post-form" >     
+                        {% csrf_token %}
+                        {{ form.as_table}}
+                 </table>
+                <br>
+                        {% if element.pwd %} 
+                                <button type = "submit" class="btn btn-primary btn-sl" disabled="disabled">Enregistrer</button>
+                        {% else %}
+                                <button type = "submit" class="btn btn-primary btn-sl" disabled="disabled"> Enregistrer</button>
+                        {% endif %}
+                        <button type = "submit" class="btn btn-primary btn-sl"> Générer</button>
+               
+        </div>
+
 
 <hr>
-{{ generate.form }}
-<!-- {{ request.POST}} -->
+
+{% for element in generation %}
+<li> {{element.id}} | {{element.title}} | {{element.username}} | {{element.created_date}} </li>
+{% endfor %}
+
 
 {% endblock content%}

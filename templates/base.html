@@ -14,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}"  />
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"  /> 
     </head>
 
     <body id="page-top">
@@ -35,8 +35,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href={% url 'pages:home' %}>Acceuil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages:about">A propos</a></li>
                         
                         
 
@@ -49,10 +47,28 @@
                                                         <li><a class="dropdown-item" href="{% url 'add_note' %}">Nouvelle Note</a></li>
                                                 </ul>
                                         </li>
+                                        <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                                PasswordBank</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                         <li><a class="dropdown-item" href="#">Ma banque</a></li> 
+                                                        <li><a class="dropdown-item" href="#">Generateur</a></li>
+                                                </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                                        Mon Calendrier</a>
+                                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                <li><a class="dropdown-item" href="{% url 'events:events' %}">Mes Évènements</a></li> 
+                                                                <li><a class="dropdown-item" href="{% url 'events:create_event' %}">Ajouter un évènements</a></li>
+                                                                <li><a class="dropdown-item" href="{% url 'events:calendar' %}">Calendrier</a></li>
+                                                        </ul>
+                                                </li>
+
                         {% endif %}
                         
                         <li class="nav-item">
-                                <a class="nav-link " href="{% url 'pages:contact' %}">Contact</a>
+                                <a class="nav-link " href="{% url 'contact' %}">Contact</a>
                         </li>
 
                     </ul>

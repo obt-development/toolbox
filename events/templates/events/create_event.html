@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}ToolBox | Event{% endblock title %}
+
+{% block content %}
+<hr>
+<center><h1>NOUVEL ÉVÈNEMENT</h1></center>
+<hr>
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-body" style="height:600px">
+            <center>
+                <form action="{% url 'events:create_event' %}" method= "POST">
+                {% csrf_token %}
+                    <label>Nom de l'évènement : </label>
+                    <input id="name" name="name" placeholder="nom de l'évènement ..."></input><br>
+                    <label>Description : </label>
+                    <input id="description" name="descrition" placeholder="descrition de l'évènement ..."></input><br>
+                    
+
+                    <button type="submit" class="btn btn-primary btn-sm" > Créer évenement</button>
+            </form>
+            </center> 
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

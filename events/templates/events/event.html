@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}ToolBox | Event{% endblock title %}
+
+{% block content %}
+<hr>
+<center><h1> MES ÉVÉNEMENTS CALENDRIER</h1></center>
+<hr>
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-body" style="height:600px">
+            <ul>
+                {% for event in events %}
+
+                    <li> {{ event.name }} <a href= " {{event.id}} ">Voir</a></li>
+                
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

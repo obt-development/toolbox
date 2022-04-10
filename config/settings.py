@@ -55,9 +55,11 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     
     'accounts.apps.AccountsConfig',
-    'pages.apps.PagesConfig',
+    'contact.apps.ContactConfig',
     'note.apps.NoteConfig',
+    'pages.apps.PagesConfig',
     'pwd.apps.PwdConfig',
+    'events.apps.EventsConfig',
 ]
     
 

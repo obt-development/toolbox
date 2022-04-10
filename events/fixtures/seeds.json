@@ -1,0 +1,12 @@
+[
+    {
+        "model":"events.Event",
+        "pk" : 3,
+        "fields":{
+            "name": "Webinaire sur HTMX",
+            "description": "Thierry va nous présenter l'utilisation de HTMX sur les form Django !!!",
+            "created_at": "2022-04-06 15:00:00"
+        }
+
+    }
+]

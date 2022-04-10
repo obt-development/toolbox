@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}ToolBox | Event{% endblock title %}
+
+{% block content %}
+
+<hr>
+<center><h1>{{my_event.name|upper}}</h1></center>
+<hr>
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-body" style="height:600px">
+            <center>
+            <h4> {{ my_event.starts_at | date:'l d F Y'}}  </h4>
+            <h4> {{ my_event.ends_at | date:'l d F Y'}}  </h4>
+            <h4> {{ my_event.created_at | date:'l d F Y'}}  </h4>
+                <h5>{{ my_event.description }}</h5>
+               <a href="{% url 'events:events' %}" class="card-link"> Retour</a> 
+            </center> 
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

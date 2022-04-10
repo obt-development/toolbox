@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}ToolBox | Event{% endblock title %}
+
+{% block content %}
+<hr>
+<center><h1>CALENDRIER DU MOIS :  {{ month | upper }} {{ year }} ...</h1></center>
+<hr>
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-body" style="height:600px">
+            <center>
+
+                {{cal|safe}}<br/><br/>
+                Nous comme le {{current_date | date:' l d F Y' }}<br/>
+
+            </center> 
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
